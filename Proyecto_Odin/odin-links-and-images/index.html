@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes y links</title>
+</head>
+<body>
+    <h1>Página principal</h1>
+    
+    <!-- Para crear los links usamos el elemento 'anchor' que se representa con <a> -->
+    <!-- Si queremos abrir links en una nueva pestaña usmos 'target', por defecto vendra con el valor _self, nos interesa _blank -->
+    <!-- El atributo 'rel' nos describe la relacion entre la pagina actual y el link del documento. Los valores más relevantes serían:
+        - noopener: evita que el nuevo tab pueda acceder a la pagina original (evitar ataques como tabnabbing)
+        - noreferrer: hace lo mismo pero además previene que ciertos detalles pasen de la página original a la nueva -->
+    
+    <a href="https://www.theodinproject.com/about" target="_blank" rel="noreferrer">Sobre el Proyecto Odin</a>
+
+    <!-- Tenemos dos tipos de links:
+        - absolutos: "scheme://domain/path", nos llevan a otras páginas.
+        - relativos: nos llevan a páginas dentro de nuestro propio sitio web. Solo incluiran el "path" hasta el archivo -->
+    
+    <a href="pages/about.html" target="_blank">About</a>
+
+    <!-- Al indicar el camino, 'path', a seguir tanto en 'src' como en 'href', podemos usar un . delante de la ruta para evitar problemas -->
+    <!-- Podemos cambiar el tamaño de la imagen con width y height, aunque será mejor hacerlo más tarde desde CSS -->
+    <img src="./images/dog.jpg" alt="Dog" width="100" height="auto">
+
+</body>
+</html>
