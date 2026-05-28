@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Los diseños no se rompen al añadir bordes y rellenos */
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duración de la transición */
+    background-color: black; /* Evita destellos blancos entre cargas */
+}
+
+/* Cuando el JS se activa, la página aparece */
+body.visible {
+    opacity: 1;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Mantiene la cabina fija y evita el scroll */
+    background-color: black; /* Color de respaldo mientras carga la imagen */
+}
+
+
+.escena-espacial {
+    position: relative; /* Referencia para los elementos internos absolutos */
+    height: 100vh;
+    width: 100vw;
+    background-image: url("assets/nave_vacia.png");
+    background-size: cover; /* Cubre toda la pantalla sin distorsionar */
+    background-position: center;
+}
+
+
+.elemento-clicable {
+    position: absolute;
+    display: inline-block;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.elemento-clicable img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.elemento-clicable:hover {
+    transform: scale(1.1) rotate(2deg);
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+    cursor: pointer;
+}
+
+.elemento-estatico {
+    position: absolute;
+    display: block;
+    z-index: 5;
+}
+
+
+.zona-serpiente   { top: 0%; left: 25%; width: 250px; }
+.zona-aws         { bottom: 55%; left: 78%; width: 320px; }
+.zona-pinguino    { top: 22%; left: 62%; width: 180px; }
+.zona-cajas       { bottom: 10%; left: 40%; width: 250px; }
+.zona-palanca     { bottom: 26%; left: 91%; width: 100px; }
+.zona-astronauta  { bottom: 3%; left: 19%; width: 200px; }
+
+.mesa-control     { bottom: -7%; right: 0%; width: 630px; }

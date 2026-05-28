@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duración de la transición */
+    background-color: black; /* Evita destellos blancos entre cargas */
+}
+
+/* Cuando el JS se activa, la página aparece */
+body.visible {
+    opacity: 1;
+}
+
+
+.pantalla-escritorio {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/escritorio2.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}   
+
+.zona-clicable {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.zona-clicable img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.zona-clicable:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1); /* Brillo sutil al pasar el ratón */
+}
+
+.zona-boton { width: 5%; right: 2%; bottom: 2%; }
+.zona-minecraft { width: 10%; right: 2.5%; top: 22.5%; } 
+.zona-wow { width: 10%; right: 2.5%; top: 2.5%; }
+.zona-blog {width: 10%; right:2.5%; top: 42.5%}
+
+.modal-overlay {
+    position: fixed;      /* Se queda pegado a la pantalla aunque muevas el scroll */
+    top: 0; left: 0;      /* Se pega a la esquina superior izquierda */
+    width: 100vw;         /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh;        /* Ocupa el 100% del alto de la ventana */
+    background: rgba(0, 0, 0, 0.7); /* Color negro con 70% de opacidad (transparente) */
+    backdrop-filter: blur(5px);    /* Desenfoca lo que haya detrás (tu escritorio de Windows) */
+    display: flex;        /* Activamos el modo 'flex' para centrar cosas fácilmente */
+    justify-content: center; /* Centra la caja horizontalmente */
+    align-items: center;     /* Centra la caja verticalmente */
+    z-index: 1000;        /* Un número alto para asegurar que está por encima de todo */
+}
+
+.modal-box {
+    background: #edead7;  /* Color gris muy claro, típico de ventanas de sistema */
+    padding: 30px;        /* Espacio de aire entre el texto y los bordes de la caja */
+    border: 4px solid #cc0000; /* Borde grueso de color rojo "alerta" */
+    border-radius: 10px;  /* Esquinas suavizadas */
+    text-align: center;   /* Centra todo el texto dentro de la caja */
+    max-width: 400px;     /* Para que en pantallas grandes la caja no sea gigante */
+    position: relative; /* NECESARIO para que el papel se pegue aquí */
+    overflow: hidden;    /* Para que el papel no se salga de las esquinas redondeadas */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Una sombra elegante para que parezca que flota */
+}
+
+.boton-aceptar {
+    margin-top: 20px;     /* Separa el botón del texto de arriba */
+    padding: 10px 25px;   /* Tamaño del botón */
+    background: #cc0000;  /* Fondo rojo */
+    color: white;         /* Letras blancas */
+    border: none;         /* Quitamos el borde feo que traen los botones por defecto */
+    border-radius: 5px;   /* Esquinas un pelín redondas */
+    cursor: pointer;      /* Hace que el ratón se vuelva una "manita" al pasar por encima */
+    font-weight: bold;    /* Letra en negrita */
+    transition: 0.3s;     /* Hace que cualquier cambio (como el color) sea suave, no de golpe */
+}
+
+.boton-aceptar:hover {
+    background: #990000;  /* Se vuelve un rojo más oscuro al poner el ratón */
+    transform: scale(1.1); /* Se hace un 10% más grande para que parezca que reacciona */
+}
+
+.modal-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/papel-2.png");
+    background-size: cover;
+    pointer-events: none; /* Para que el botón de aceptar siga funcionando */
+    z-index: 1;          /* Por encima del texto */
+}

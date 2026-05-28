@@ -1,0 +1,97 @@
+    /* de forma abreviada podría editarse toda la fuente a la vez poniendo:
+        {font: weight style size/height family} */
+    /* también podemos editar varios tags a la vez usando "comas":
+        ej.: h1, h2, p { color: red } 
+        Lo mismo podemos hacer para las clases:
+        ej.: .xxx, .yyy { font-size: 30px } */
+p {
+    text-align:left;
+    font-family: monospace;
+    line-height: 1.6;
+    max-width: 1200px;
+    color: rgb(131, 158, 226);
+    margin-bottom: 20px;
+}
+h1 {
+    color: rgb(119, 25, 165);
+    font-family:monospace;
+    font-size: 30px;
+}
+h2 {
+    color: rgb(172, 90, 210);
+    font-family:monospace;
+    font-size: 24px;
+}
+h3 {
+    color: rgb(94, 94, 189);
+    font-family:monospace;
+    font-size: 20px;
+    text-decoration: underline;
+}
+h4 {
+    color: rgb(128, 128, 240);
+    font-family:monospace;
+    font-size: 16px;
+}
+
+td {
+    width: 150px;
+    height: 50px;
+    text-align:center;
+    font-family:monospace;
+}
+th {
+    width: 150px;
+    height: 50px;
+    font-family:monospace;
+}
+ul {
+    color: rgb(116, 116, 223);
+    font-style: italic;
+    font-family:monospace;
+}
+ol {
+    color: rgb(116, 116, 223);
+    font-style: italic;
+    font-family:monospace;
+}
+a {
+    text-decoration: none;
+    color: rgb(83, 184, 161);
+    font-family: monospace;
+}
+li > i {
+    color: rgb(179, 179, 252);
+}
+.intro p{
+    color: rgb(170, 115, 215);
+}
+a:hover {
+    color: rgb(191, 132, 221);
+}
+.PCC p > b {
+    font-weight: bold;
+    font-size: 14px;
+    color:rgb(242, 177, 46);
+}
+.PCC h1 {
+    color: rgb(82, 82, 209);
+}
+.PCC h2 {
+    color:rgb(242, 177, 46);
+}
+.PCC a:hover {
+    color: rgb(242, 177, 46);
+}
+.PCC li:nth-child(odd) {
+    color: rgb(242, 177, 46);
+}
+.PCC img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.PCC img:first-of-type { /* Añadido tmb nuevo */
+    float: left;
+    margin-right: 20px;
+}

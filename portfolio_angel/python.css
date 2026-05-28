@@ -1,0 +1,199 @@
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duración de la transición */
+    background-color: black; /* Evita destellos blancos entre cargas */
+}
+
+/* Cuando el JS se activa, la página aparece */
+body.visible {
+    opacity: 1;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("assets/fondo.png");
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-y: auto; /* Permite scroll vertical */
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Cabin Sketch', cursive; /* Fuente estilo crayón */
+    color: #debb2e; 
+    letter-spacing: 2px; 
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5); 
+}
+
+.subtitulo {
+    font-family: 'Cabin Sketch', cursive;
+    opacity: 0.9;
+    mask-image: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.8));
+}
+
+
+.muro, .muro2 {
+    position: fixed; 
+    top: 0;      
+    width: 250px;    
+    height: 100vh;
+    background-image: url("assets/muro.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+    z-index: 1;      
+    pointer-events: none; 
+}
+.muro { left: 0; }
+.muro2 { right: 0; }
+
+.tuberia, .tuberia2 {
+    position: fixed; 
+    top: 0;      
+    width: 100px;    
+    height: 100vh;
+    background-image: url("assets/tuberia.png");
+    background-repeat: repeat-y;
+    background-size: contain;
+    z-index: 2;      
+    pointer-events: none; 
+}
+.tuberia { left: 14.3%; }
+.tuberia2 { right: 13.1%; }
+
+.serpiente-lateral {
+    position: fixed;
+    right: -27%;
+    top: 0;
+    width: 300px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cabeza-python {
+    position: fixed; 
+    top: 0px;      
+    right: 90%;        
+    width: 350px;    
+    z-index: 3;      
+    pointer-events: none; 
+}
+
+
+.contenedor-principal {
+    position: relative; 
+    z-index: 5; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 40px; 
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(5px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenedor-principal::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url("assets/papel.png"); 
+    opacity: 0.25;      
+    z-index: 6;         
+    pointer-events: none; 
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+}
+
+.contenedor-principal b {
+    color: #debb2e;
+}
+
+
+.panel-conceptos, .panel-avanzada {
+    background: rgba(10, 94, 163, 0.3);
+    border: 2px solid rgb(181, 198, 207);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: inset 0 0 15px rgba(101, 144, 208, 0.5);
+}
+
+.lista-ejercicios li, .lista-avanzada li, .otros-enlaces li {
+    list-style: none; 
+    margin: 12px 0; 
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.lista-ejercicios li:last-child, .lista-avanzada li:last-child {
+    border-bottom: none; 
+}
+
+.lista-ejercicios a, .lista-avanzada a, .otros-enlaces a{
+    color: #a4c8ec; 
+    text-decoration: none; 
+    transition: 0.5s; 
+}
+
+.lista-ejercicios a:hover, .lista-avanzada a:hover, .otros-enlaces a:hover {
+    color: #f0df71; 
+    padding-left: 15px; 
+    text-shadow: 0 0 8px rgba(240, 223, 113, 0.5);
+}
+
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.tarjeta-proyecto {
+    background: rgba(10, 94, 163, 0.3); 
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(181, 198, 207); 
+    margin: 15px 0;
+    box-shadow: inset 0 0 15px rgba(101, 144, 208, 0.5);
+    backdrop-filter: blur(5px);
+    font-size: 1.2rem;
+    color: #a4c8ec;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-proyecto:hover {
+    background: rgba(10, 94, 163, 0.5); 
+    transform: translateY(-5px); 
+    border-color: #419bcc; 
+    box-shadow: 0 0 20px rgba(113, 113, 240, 0.3), inset 0 0 15px rgba(101, 144, 208, 0.5);
+    cursor: pointer;
+}
+
+
+.boton-volver {
+    display: inline-block; 
+    margin-top: 30px;
+    color: #ffcc00; 
+    text-decoration: none;
+    border: 3px solid #ffcc00;
+    padding: 10px 20px;
+    border-radius: 20px; 
+    transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #1b438e; 
+    color: rgb(131, 159, 211); 
+    border: 3px solid #9598dc;
+}
+
+hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

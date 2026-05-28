@@ -1,0 +1,4 @@
+In Python you can make functions and classes.
+In Python you can use while or for loops.
+In Python you can build a functional calculator.
+In Python ypu can get easily desperate.

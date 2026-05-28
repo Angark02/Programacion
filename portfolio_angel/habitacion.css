@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita que el padding o bordes alteren el tamaño total */
+}
+
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duración de la transición */
+    background-color: black; /* Evita destellos blancos entre cargas */
+}
+
+/* Cuando el JS se activa, la página aparece */
+body.visible {
+    opacity: 1;
+}
+
+
+.habitacion-contenedor {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/habitacion.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* A ver si así funciona la textura */
+.habitacion-contenedor::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/papel-2.png"); 
+    opacity: 0.2;      
+    z-index: 20;         
+    pointer-events: none; /* Permite hacer clic a través de la textura */
+    mix-blend-mode: overlay;
+}
+
+
+.zona-estatica {
+    position: absolute;
+    display: block;
+    z-index: 5;
+}
+
+.zona-clicable {
+    position: absolute;
+    cursor: pointer;
+    z-index: 5;
+    transition: transform 0.2s ease;
+}
+
+.zona-clicable img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.zona-clicable:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1); /* Brillo sutil al pasar el ratón */
+}
+
+
+.zona-duendecillo { 
+    width: 100px; 
+    top: 25%; 
+    left: 15%; 
+}
+
+.zona-wooper { 
+    width: 300px; 
+    bottom: -2%; 
+    left: 62%; 
+    transform: scaleX(-1); 
+}
+
+.zona-silla { 
+    width: 320px; 
+    bottom: 0%; 
+    left: 40%;
+    z-index: 7; 
+}
+
+.zona-pistacho { 
+    width: 350px; 
+    bottom: 45%; 
+    right: 0%; 
+}
+
+.zona-shinchan { 
+    width: 100px; 
+    top: 3.5%; 
+    left: 20%; 
+}
+
+.zona-libro { 
+    width: 195px; 
+    bottom: 23.5%; 
+    right: 0%; 
+}
+
+
+.zona-monitor { 
+    position: absolute;
+    width: 380px; 
+    bottom: 70%; 
+    left: 63.5%;
+    transform: translate(-50%, 50%);
+}
+
+.zona-monitor img { 
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pantalla-efecto {
+    top: 14.5%; 
+    left: 9%; 
+    width: 62.5%; 
+    height: 56%;
+    background: #01223944;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    z-index: 6;
+    transition: all 0.3s ease;
+}
+
+.pantalla-efecto img {
+    width: 30%;
+    top: 25%; 
+    left: 35%;
+    height: auto;
+    display: block;
+    position: relative;
+    opacity: 50%;
+}
+
+.pantalla-efecto:hover {
+    background: #01223944 !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), 0 0 40px rgba(255, 255, 255, 0.4);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+
+.boton-volver {
+    position: absolute; 
+    bottom: 40px;
+    left: 100px;
+    
+    width: 120px; /* 1. Le damos el tamaño fijo al contenedor/enlace (ajústalo si la quieres más grande) */
+    display: block; /* 2. Hacemos que se comporte como un bloque estricto */
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 15;
+}
+
+.boton-volver img {
+    width: 100%; /* 3. Ahora la imagen ocupa el 100% de esos 120px, no el 10% de la pantalla */
+    height: auto;
+    display: block;
+}
+
+.boton-volver:hover {
+    transform: rotate(3deg) scale(1.1); /* Se endereza y crece al interactuar */
+    background: rgba(255, 255, 255, 0.1);
+}

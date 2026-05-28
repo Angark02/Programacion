@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Duración de la transición */
+    background-color: black; /* Evita destellos blancos entre cargas */
+}
+
+/* Cuando el JS se activa, la página aparece */
+body.visible {
+    opacity: 1;
+}
+
+
+.cuerpo-espacio {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/espacio.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}   
+
+.cuerpo-espacio::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-image: url("assets/papel-2.png");    
+    z-index: 20;         
+    pointer-events: none; 
+    border-radius: inherit;
+    mix-blend-mode: overlay;
+}
+
+
+.zona-estatica {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.zona-estatica img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.zona-clicable {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.zona-clicable img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.zona-clicable:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.1); /* Brillo sutil al pasar el ratón */
+}
+
+.zona-nave { width: 50%; left: 30%; bottom: 22%; }
+.zona-humo { width: 80%; left: 7.5%; bottom: 8.5%}
+
+.texto-bienvenida {
+    position: fixed; 
+    top: 0;      
+    width: 100vw;    
+    height: 100vh;
+    background-image: url("assets/texto-bienvenida.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 5;      
+    pointer-events: none; 
+}

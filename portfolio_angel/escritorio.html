@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalla de Escritorio</title>
+    <link rel="stylesheet" href="escritorio.css">
+</head>
+<body>
+    <div id="modal-malware" class="modal-overlay">
+        <div class="modal-box">
+            <h2>¡MALWARE DETECTADO! <br>⚠️</h2>
+            
+            <p>Se ha detectado un intento de <b>intrusión.</b>
+                <br>El firewall y el antivirus no aguantarán mucho más. Se recomienda quemar el equipo como medida de seguridad.
+                <br><small><i>"(a ver si así la indeminación por filtración de datos no nos sale tan cara...)"</small></i>
+            </p>
+            
+            <button class="boton-aceptar" onclick="cerrarModal()">ACEPTAR</button>
+        </div>
+    </div>
+
+    <div class="pantalla-escritorio">
+        <a href="login_malware.html" class="zona-clicable zona-boton" title="Volver a la selección de perfil">
+            <img src="assets/boton-apagado.PNG" alt="Botón apagado">
+        </a>
+        <a href="https://worldofwarcraft.blizzard.com/es-es/" class="zona-clicable zona-wow" title="WOW" target="_blank">
+            <img src="assets/wow.PNG" alt="World Of Warcraft">
+        </a>
+        <a href="http://minecraft.com" class="zona-clicable zona-minecraft" title="Minecraft" target="_blank">
+            <img src="assets/minecraft.PNG" alt="Minecraft">
+        </a>
+        <a href="blog/index.html" class="zona-clicable zona-blog" title="Reseñas de Mierda" target="_blank">
+            <img src="assets/logo.PNG" alt="Reseñas de mierda">
+        </a>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
