@@ -1,0 +1,78 @@
+.parent {
+    display: flex;
+    flex-flow: row wrap;
+    border: 4px solid grey;
+    width: 250px;
+    height: 500px;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.item {
+    border: 2px solid;
+    opacity: 0.8;
+    height: 50px;
+    width: 50px;
+    box-sizing: border-box;
+}
+
+.item:first-child {
+    background-color: wheat;
+    border-color: gold;
+}
+
+.item:nth-child(2) {
+    background-color: aliceblue;
+    border-color: lightblue;
+}
+
+.item:last-child {
+    background-color: pink;
+    border-color: hotpink;
+}
+
+/* Usando 'display: inline' lo que hacemos es que se situen en línea, mostrando contenido tras contenido, sin tener en cuenta las proporciones que le hemos otorgado a cada elemento. */
+
+/* 
+'diplay: flex' lo que hace es que tengamos un contenedor flexible, lo que nos permite alinear a los hijos de forma mucho más eficiente tanto de forma horizontal como vertical 
+
+Flex es unidireccional, el contenido podemos verlo en filas, 'flex-direction: row' o en columnas 'flex-direction: column', es decir, trabajamos en un único eje. En Grid por ejemplo podriamos trabajar tanto con columnas como con filas a la vez.
+
+Con 'writing-mode' podemos cambiar la dirección en la que se escribe ya sea vertical, de derecha a izquierda, etc. Puede venir bien para adecuarse a los diferentes idiomas.
+
+'flex-wrap: wrap' lo que hace es que cuando algo no cabe en su padre, o en la página, depende como lo tengamos configurado, pueda hacer un salto de línea. Ejemplo: el padre son 200px y contiene 3 hijos de 100px, por defecto como viene configurado con nowrap, los items se ajustarán al padre, debemos usar 'flex-wrap: wrap' para eviarlo.
+
+'flex-flow: row wrap' forma abreviada.
+
+Valores por defecto:
+    - 'flex-grow: 0' los elementos NO crecen;
+    - 'flex-shrink: 1; los elementos pueden reducir su tamaño a un tamaño más pequeño q flex-basis.
+    - 'flex-basis: auto; los elementos tienen un tamaño base en auto.
+    Todo esto sería igual a 'flex: initial'.
+    'flex-auto' sería = " 1 1 auto "
+
+    'flex: 1' reparte igual el espacio entre todos los hijos. Podemos jugar con esto otorgándole a cada hijo un valor distinto, que tomara en función del otorgado al padre.
+
+Con la propiedad 'order' podemos cambiar el orden de los items.
+
+Juego para aprender flexbox: https://flexboxfroggy.com/#es 
+*/
+
+/* 
+'justify-content' nos permite distribuir el contenido en el espacio del eje principal (columna o línea).
+    - 'space-around' dejará espacio entre los elementos y laterales, pero entre los elementos será el doble.
+    - 'space-between' no deja espacio a los laterales, solo entre elementos.
+    - 'space-evenly' muy parecido al around, pero dejando exáctamente el mismo espacio.
+    - 'center' los centra pero sin espacio.
+
+'gap' nos permite establecer el espacio entre elementos.
+
+'align-items' nos permitirá alinear los elementos en el eje contrario/cruzado.
+
+'align-self' nos permite hacer lo mismo pero con un solo elemento.
+
+'aling-content' hace falta más de una fila o más de una columna. No lo entiendo.
+*/

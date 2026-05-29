@@ -1,0 +1,57 @@
+body {
+    padding-top: 200px;
+}
+
+div {
+    border: 2px solid lightblue;
+    opacity: 0.9;
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    margin-top: -100px;
+    box-shadow: 0 0 5px #000000dd;
+    position:relative;
+}
+
+div:first-child {
+    background-color: wheat;
+    border-color: gold;
+    z-index: 3;
+}
+
+div:nth-child(2) {
+    z-index: 2;
+}
+
+div:last-child {
+    background-color: pink;
+    border-color: hotpink;
+    z-index: 1;
+}
+
+/* 'box-sizing: border-box' debemos usarlo casi que por defecto, es la forma más útil y en la que mejor nos va a quedar todo */
+
+/* Diferencia entre 'position: absolute' y 'position:relative', el primero va en el hijo y permite moverlo respecto a toda la página. El segundo va en el padre y hace que podamos posicionar al hijo respecto al padre */
+
+/* Para centrar cosas podriamos hacerlo con 'margin: auto' y 'right/left/bottom/top: 0', sin embargo no es lo suyo.  Es mejor hacerlo con 'inset: 0' junto a margin, sin embargo sigue sin ser lo más adecuado */
+
+/* 'position: fixed' lo que hace es que se quede fijo el elemento siempre en el mismo lugar de la pantalla (en el viewport), pasando del 'relative' del padre. Puede ser útil por ejemplo para fijar un chat, video, link, etc. en la esquina de la pantalla */
+
+/* 'position: sticky' es parecido al fixe, pero lo que hace es quedarse fijo dentro del contenedor */
+
+/* 'z-index'; debemos pensar que aunque el usuario lo vea todo plano, realmente existe una profundidad, "un eje z", que puede ocasionar el apilamiento.
+Cosas que crean apilamiento:
+    - El elemento raíz.
+    - Una posición relativa con valor distinto a auto.
+    - Elemento flex, transform, opacity, ...
+Se crean nuevos contextos por lo que pueden solaparse los elementos.
+
+Por defecto, los elementos que están dentro de otro quedan por delante de este.
+
+Podemos otorgarle un valor numérico a 'z-index' para establecer que queda por delante y que queda por detrás en nuestra página.
+
+Para que funcione el z-index, el padre debe de tener 'position: relative', deben de tener una base desde la cual poder apilarse.
+
+Página para practicar: https://web.dev/learn/css/z-index?hl=es-419 */
+
+/* Página web de MDN, se supone que es de las que mejor información tiene: https://developer.mozilla.org/en-US/docs/Web/CSS */
