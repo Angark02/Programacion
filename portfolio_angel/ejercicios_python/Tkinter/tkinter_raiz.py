@@ -1,6 +1,9 @@
 """
 Información sobre tkinter: https://docs.python.org/3/library/tk.html
 """
+"""
+Trabajando con tkinter raíz
+"""
 
 from tkinter import *
 
